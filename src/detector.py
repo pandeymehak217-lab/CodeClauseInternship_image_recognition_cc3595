@@ -1,6 +1,5 @@
 import cv2
 
-# Load Haar Cascade for face detection
 face_cascade = cv2.CascadeClassifier(
     cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 )
@@ -46,10 +45,10 @@ def draw_boxes(image, boxes, label):
     img = image.copy()
 
     for idx, (x, y, w, h) in enumerate(boxes, start=1):
-        # Green bounding box
+     
         cv2.rectangle(img, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
-        # Label (Face-1, Object-1, etc.)
+
         text = f"{label}-{idx}"
         cv2.putText(
             img,
@@ -61,7 +60,7 @@ def draw_boxes(image, boxes, label):
             2
         )
 
-    # Total count text
+  
     total_text = f"Total {label}s: {len(boxes)}"
     cv2.putText(
         img,
