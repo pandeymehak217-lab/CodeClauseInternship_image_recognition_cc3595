@@ -18,7 +18,7 @@ def main():
 
     args = parser.parse_args()
 
-    # Read image
+
     image = read_image(args.image)
 
     # Detection
@@ -31,7 +31,7 @@ def main():
 
     print(f"Detected {len(boxes)} {args.mode}(s)")
 
-    # Show or save result
+  
     if args.save:
         save_image(args.save, output)
         print(f"Result saved to {args.save}")
